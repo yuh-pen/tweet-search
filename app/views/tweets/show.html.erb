@@ -1,0 +1,12 @@
+<% if @tweets.present? %>
+  <h2>検索結果</h2>
+  <ul>
+    <% @tweets.each_with_index do |tweet, i| %>
+    <div class="list">
+      <li>Tweet<%= i %>: <%= tweet.contents %> </li>
+    </div>
+    <% end %>
+  </ul>
+<% end %>
+
+<h2>test</h2>
