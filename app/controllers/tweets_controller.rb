@@ -13,9 +13,9 @@ class TweetsController < ApplicationController
 
     if params[:keyword].present?
 
-      tweets = client.search(params[:keyword], count: 10, result_type: "recent", exclude: "retweets", since_id: since_id)
+      tweets = client.search(params[:keyword], count: 100, result_type: "mixed", exclude: "retweets", since_id: since_id, lang: "ja")
 
-      tweets.take(10).each do |tw|
+      tweets.take(100).each do |tw|
         tweet = Tweet.new(tw.full_text)
         @tweets << tweet
       end
